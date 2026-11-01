@@ -1,20 +1,18 @@
 {
   "name": "guestbook-app",
-  "version": "1.0.0",
-  "description": "",
-  "main": "middleware.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "@supabase/ssr": "^0.12.7",
-    "@supabase/supabase-js": "^2.118.0"
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.48.1",
+    "next": "^15.5.28",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

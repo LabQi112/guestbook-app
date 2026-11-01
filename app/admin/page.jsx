@@ -23,7 +23,7 @@ export default function AdminLogin() {
     });
 
     if (error) {
-      setError(error.message);
+      setError('Email atau password salah. Silakan coba lagi.');
       setLoading(false);
     } else {
       router.push('/admin/dashboard');
@@ -32,45 +32,56 @@ export default function AdminLogin() {
   };
 
   return (
-    <main className="min-h-screen flex items-center justify-center px-4">
-      <div className="bg-white p-8 rounded-xl shadow-md border border-slate-100 w-full max-w-sm">
-        <h1 className="text-xl font-bold text-slate-800 text-center mb-6">Login Dashboard Admin</h1>
+    <main className="min-h-screen bg-slate-100 flex items-center justify-center p-4">
+      <div className="w-full max-w-md bg-white rounded-2xl shadow-xl p-8 border border-slate-100">
+        <div className="text-center mb-8">
+          <h1 className="text-2xl font-bold text-slate-800">Login Admin</h1>
+          <p className="text-sm text-slate-500 mt-2">
+            Masuk untuk mengelola data buku tamu.
+          </p>
+        </div>
 
         {error && (
-          <div className="p-3 mb-4 bg-rose-50 border border-rose-200 text-rose-700 text-xs rounded-lg">
+          <div className="p-4 mb-6 rounded-xl text-sm font-medium bg-rose-50 text-rose-700 border border-rose-200">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-5">
           <div>
-            <label className="block text-xs font-semibold text-slate-600 mb-1">Email</label>
+            <label className="block text-sm font-semibold text-slate-700 mb-1">
+              Email
+            </label>
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none transition"
+              placeholder="admin@email.com"
             />
           </div>
 
           <div>
-            <label className="block text-xs font-semibold text-slate-600 mb-1">Password</label>
+            <label className="block text-sm font-semibold text-slate-700 mb-1">
+              Password
+            </label>
             <input
               type="password"
               required
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border border-slate-300 rounded-lg text-sm focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              className="w-full px-4 py-2.5 rounded-lg border border-slate-300 text-slate-800 text-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:outline-none transition"
+              placeholder="••••••••"
             />
           </div>
 
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-2 bg-slate-900 hover:bg-slate-800 text-white font-medium rounded-lg text-sm transition duration-150 disabled:opacity-50"
+            className="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-lg text-sm shadow-md hover:shadow-lg transition duration-200 disabled:opacity-50"
           >
-            {loading ? 'Proses Master Sign-in...' : 'Masuk'}
+            {loading ? 'Memproses...' : 'Masuk'}
           </button>
         </form>
       </div>

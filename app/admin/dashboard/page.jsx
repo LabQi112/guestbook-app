@@ -97,10 +97,10 @@ export default function AdminDashboard() {
                 <thead>
                   <tr className="bg-slate-50 border-b border-slate-200 text-slate-600 text-xs font-bold uppercase tracking-wider">
                     <th className="p-4">Tanggal Submit</th>
+                    <th className="p-4">Pesan</th>
                     <th className="p-4">Nama</th>
                     <th className="p-4">Email</th>
                     <th className="p-4">Instansi</th>
-                    <th className="p-4">Pesan</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100">
@@ -112,12 +112,12 @@ export default function AdminDashboard() {
                           timeStyle: 'short',
                         })}
                       </td>
+                      <td className="p-4 text-slate-700 max-w-xs break-words">{item.message}</td>
                       <td className="p-4 font-semibold text-slate-900 whitespace-nowrap">
                         {item.name}
                       </td>
                       <td className="p-4 text-slate-600 whitespace-nowrap">{item.email}</td>
                       <td className="p-4 text-slate-600 whitespace-nowrap">{item.institution}</td>
-                      <td className="p-4 text-slate-700 max-w-xs break-words">{item.message}</td>
                     </tr>
                   ))}
                 </tbody>

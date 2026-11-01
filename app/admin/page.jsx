@@ -38,7 +38,6 @@ export default function AdminLogin() {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-10 shadow-sm">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center space-x-2">
-            <span className="text-xl">📖</span>
             <span className="font-bold text-slate-800 text-lg">Buku Tamu</span>
           </div>
           <Link
